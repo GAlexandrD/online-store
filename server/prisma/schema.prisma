@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model baskets {
+  id             Int              @id @default(autoincrement())
+  userId         Int?
+  basket_devices basket_devices[]
+  users          users?           @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model brands {
+  id          Int           @id @default(autoincrement())
+  name        String        @unique @db.VarChar(255)
+  devices     devices[]
+  type_brands type_brands[]
+}
+
+model devices {
+  id             Int              @id @default(autoincrement())
+  name           String           @unique @db.VarChar(255)
+  price          Int
+  img            String?          @db.VarChar(255)
+  typeId         Int
+  brandId        Int
+  basket_devices basket_devices[]
+  device_infos   device_infos[]
+  brands         brands?          @relation(fields: [brandId], references: [id])
+  types          types?           @relation(fields: [typeId], references: [id])
+}
+
+model types {
+  id          Int           @id @default(autoincrement())
+  name        String        @unique @db.VarChar(255)
+  devices     devices[]
+  type_brands type_brands[]
+}
+
+model users {
+  id         Int          @id @default(autoincrement())
+  email      String?      @unique @db.VarChar(255)
+  password   String?      @db.VarChar(255)
+  role       String?      @default("USER") @db.VarChar(255)
+  baskets    baskets[]
+  tokens     tokens[]
+}
+
+model basket_devices {
+  id       Int      @id @default(autoincrement())
+  basketId Int?
+  deviceId Int?
+  baskets  baskets? @relation(fields: [basketId], references: [id], onDelete: Cascade)
+  devices  devices? @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([basketId, deviceId])
+}
+
+model device_infos {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.VarChar(255)
+  deviceId    Int?
+  devices     devices? @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}
+
+model type_brands {
+  id      Int     @id @default(autoincrement())
+  typeId  Int?
+  brandId Int?
+  brands  brands? @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  types   types?  @relation(fields: [typeId], references: [id], onDelete: Cascade)
+
+  @@unique([typeId, brandId])
+}
+
+model tokens {
+  id      Int    @id @default(autoincrement())
+  userId  Int    @unique
+  refresh String @unique
+  users   users? @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

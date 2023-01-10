@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.adminPanel__button{
+  width: 30%;
+}
+
+.Navbar{
+  position: sticky;
+  top: 0px;
+  height: 60px;
+  background-color: black;
+  width: 100%;
+}
+
+.Navbar__content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px 0px 20px;
+  margin: 0px auto;
+  height: 100%;
+}
+
+.Navbar__button{
+  background: none;
+  border: none;
+  color: azure;
+  font-size: 16px;
+  padding: 2px 8px;
+  font-weight: 900;
+  font-family:'Courier New', Courier, monospace
+}
+
+.Navbar__button_signup{
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  padding: 2px 8px;
+  margin-left: 10px;
+}
+
+.Navbar__button_signup:hover{
+  color: white;
+  background-color: black;
+  padding: 0 6px;
+  border: 2px white solid;
+}
+
+.Navbar__logo_image{
+  height: 50px;
+}
+
+.Navbar__logo_text{
+  font-size: 26px;
+  font-weight: 800;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.Navbar__logo{
+  color: white;
+}
+
+.profile__container{
+  display: flex;
+  align-items: center;
+}
+
+.profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.profile__text{
+  color: white;
+  font-size: 18px;
+  margin-right: 5px;
+}

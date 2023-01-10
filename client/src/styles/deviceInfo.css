@@ -1,0 +1,39 @@
+.deviceInfo__container{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.price{
+  font-size: 26px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  margin-right: 30px;
+}
+
+.name{
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.deviceInfo_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deviceInfo__picture{
+  width: 30%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.info{
+  width: 70%;
+  padding: 0 10px;
+}
+
+

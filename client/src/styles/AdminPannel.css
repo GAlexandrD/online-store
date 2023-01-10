@@ -1,0 +1,47 @@
+.adminPannel__container {
+  width: 70%;
+  margin: 10vh auto;
+}
+.adminPannel__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.adminPannel__name {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.adminPannel__button {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.adminPannel__button_edit {
+  width: 100%;
+}
+
+.devices__control {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.brands__control {
+  width: 100%;
+}
+
+.my-app-alert {
+  position: fixed;
+  top: 80vh;
+  width: 70%;
+  left: 15%;
+  margin: 0 auto;
+}
+
+.types__control {
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+.deviceForm__container{
+  width: 50vw;
+}
+
+.add_char{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.seperatingLine{
+  height: 0;
+  width: 100%;
+  border-bottom: 1px solid rgb(210, 207, 207);
+  margin: 5px 0 20px;
+}

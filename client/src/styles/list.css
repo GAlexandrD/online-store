@@ -1,0 +1,28 @@
+.basketNone__container{
+  width:100%;
+  display: flex;
+  height: calc(100vh - 60px);
+  align-items: center;
+  justify-content: center;
+}
+.basketNone__container h3{
+  margin-right: 10px;
+}
+
+.list__container{
+  display: flex;
+  padding: 0 6%;
+  margin-top: 15px;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.deviceList__container {
+  border-top: #e9e9e9 1px solid;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;  
+  margin-bottom: 20px;
+  border-left: 1px #e9e9e9 solid;
+}
