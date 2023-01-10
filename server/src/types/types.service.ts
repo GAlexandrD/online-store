@@ -36,9 +36,11 @@ export class TypesService {
     return type;
   }
 
-  async remove(id: number): Promise<types> {
-    const type = await this.prisma.types.delete({ where: { id } });
-    if (!type) throw new HttpException('no such type', HttpStatus.BAD_REQUEST);
+  async remove(name: string): Promise<types> {
+    const candidate = await this.prisma.types.findFirst({ where: { name } });
+    if (!candidate)
+      throw new HttpException('no such type', HttpStatus.BAD_REQUEST);
+    const type = await this.prisma.types.delete({ where: { name } });
     return type;
   }
 }

@@ -41,9 +41,9 @@ export class BrandsController {
     return this.brandsService.update(+id, name);
   }
 
-  @Delete(':id')
+  @Delete(':name')
   @ApiOkResponse({ type: Brand })
-  remove(@Param('id') id: string) {
-    return this.brandsService.remove(+id);
+  remove(@Param('name') name: string) {
+    return this.brandsService.remove(name);
   }
 }

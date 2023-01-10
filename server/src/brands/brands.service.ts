@@ -38,10 +38,11 @@ export class BrandsService {
     return brand;
   }
 
-  async remove(id: number): Promise<brands> {
-    const brand = await this.prisma.brands.delete({ where: { id } });
-    if (!brand)
+  async remove(name: string): Promise<brands> {
+    const candidate = await this.prisma.brands.findFirst({ where: { name } });
+    if (!candidate)
       throw new HttpException('no such brand', HttpStatus.BAD_REQUEST);
+    const brand = await this.prisma.brands.delete({ where: { name } });
     return brand;
   }
 }

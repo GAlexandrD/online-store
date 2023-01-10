@@ -41,9 +41,9 @@ export class TypesController {
     return this.typesService.update(+id, name);
   }
 
-  @Delete(':id')
+  @Delete(':name')
   @ApiOkResponse({ type: Type })
-  remove(@Param('id') id: string) {
-    return this.typesService.remove(+id);
+  remove(@Param('name') name: string) {
+    return this.typesService.remove(name);
   }
 }
