@@ -3,15 +3,17 @@ import { useAppDispatch, useTypedSelector } from '../hooks/redux';
 import { Alert, Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { authorisation } from '../store/reducers/AuthActionCreator';
+import { removeError, removePayload } from '../store/reducers/AdminState';
 import '../styles/AdminPannel.css';
 import DeviceForm from '../components/DeviceForm';
 import BrandForm from '../components/BrandForm';
 import TypeForm from '../components/TypeForm';
 import RemoveForm from '../components/RemoveForm';
 
-type removeType = 'device' | 'brand' | 'type';
+type removeType = 'device' | 'brand' | 'type'; 
 
 function AdminPannel() {
+  const SHOW_RESPONSE_DELAY = 1500;
   const { isAuth } = useTypedSelector((state) => state.userReducer);
   const { payload, error } = useTypedSelector((state) => state.adminReducer);
   const [isShowPayload, setIsShowPayload] = useState(false);
@@ -31,13 +33,15 @@ function AdminPannel() {
       setIsShowError(true);
       setTimeout(() => {
         setIsShowError(false);
-      }, 1000);
+        dispatch(removeError());
+      }, SHOW_RESPONSE_DELAY);
     }
     if (payload) {
       setIsShowPayload(true);
       setTimeout(() => {
         setIsShowPayload(false);
-      }, 1000);
+        dispatch(removePayload());
+      }, SHOW_RESPONSE_DELAY);
     }
   }, [payload, error]);
   useEffect(() => {

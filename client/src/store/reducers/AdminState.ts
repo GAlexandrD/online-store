@@ -9,7 +9,7 @@ interface AdminState {
 const initialState: AdminState = {
   pending: false,
   error: null,
-  payload: '',
+  payload: '',  
 };
 
 export const adminSlice = createSlice({
@@ -29,8 +29,14 @@ export const adminSlice = createSlice({
       state.payload = '';
       state.pending = false;
     },
+    removeError(state) {
+      state.error = null;
+    },
+    removePayload(state) {
+      state.payload = '';
+    }
   },
 });
 
 export default adminSlice.reducer;
-export const { pending, success, reject } = adminSlice.actions;
+export const { pending, success, reject, removeError, removePayload } = adminSlice.actions;

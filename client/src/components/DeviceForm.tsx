@@ -4,6 +4,7 @@ import MyModal from './UI/MyModal/MyModal';
 import { Button, Form, InputGroup, ListGroup } from 'react-bootstrap';
 import '../styles/deviceForm.css';
 import { addDevice } from '../store/reducers/AdminActionCreators';
+import { reject } from '../store/reducers/AdminState';
 
 interface DeviceProps {
   close: Function;
@@ -29,6 +30,10 @@ const DeviceForm: FC<DeviceProps> = ({ close }) => {
   const [device_infos, setDevice_infos] = useState([] as CharacteristicModel[]);
   const [file, setFile] = useState(null);
   const add = () => {
+    if (!name) {
+      close();
+      return dispatch(reject('please input name'));
+    }
     const priceArg = price ? +price : 0;
     if (typeof priceArg !== 'number') return;
     if (file !== null) {

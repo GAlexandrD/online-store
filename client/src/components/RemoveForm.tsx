@@ -8,6 +8,7 @@ import {
   removeDevice,
   removeType,
 } from '../store/reducers/AdminActionCreators';
+import { reject } from '../store/reducers/AdminState';
 
 type typeRemove = 'device' | 'brand' | 'type';
 
@@ -20,6 +21,10 @@ const RemoveForm: FC<RemoveProps> = ({ close, type }) => {
   const dispatch = useAppDispatch();
   const [name, setName] = useState('');
   const remove = () => {
+    if (!name) {
+      close();
+      return dispatch(reject('please input name'));
+    }
     if (type === 'device') dispatch(removeDevice(name));
     if (type === 'brand') dispatch(removeBrand(name));
     if (type === 'type') dispatch(removeType(name));

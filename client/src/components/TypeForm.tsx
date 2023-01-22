@@ -4,6 +4,7 @@ import MyModal from './UI/MyModal/MyModal';
 import { Button, InputGroup, Form } from 'react-bootstrap';
 import '../styles/deviceForm.css';
 import { addType } from '../store/reducers/AdminActionCreators';
+import { reject } from '../store/reducers/AdminState';
 
 interface TypeProps {
   close: Function;
@@ -13,6 +14,10 @@ const TypeForm: FC<TypeProps> = ({ close }) => {
   const dispatch = useAppDispatch();
   const [name, setName] = useState('');
   const add = () => {
+    if (!name) {
+      close();
+      return dispatch(reject('please input name'));
+    }
     dispatch(addType(name));
     close();
   };
