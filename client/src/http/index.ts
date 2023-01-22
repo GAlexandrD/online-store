@@ -17,7 +17,7 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
     if (
-      error.response.status == 401 &&
+      error.response.status === 401 &&
       error.config &&
       !error.config._isRetry
     ) {
@@ -30,7 +30,7 @@ api.interceptors.response.use(
         localStorage.setItem('token', response.data.accessToken);
         return api.request(originalRequest);
       } catch (e) {
-        console.log('НЕ АВТОРИЗОВАН');
+        console.log('НЕ АВТОРИЗОВАН')
       }
     }
     throw error;

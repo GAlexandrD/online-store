@@ -25,6 +25,7 @@ export class TokenService {
       refreshToken,
     };
   }
+
   async saveToken(userId: number, refresh: string) {
     const token = await this.prisma.tokens.findFirst({ where: { userId } });
     if (token) {
@@ -45,6 +46,7 @@ export class TokenService {
     });
     return token;
   }
+
   async validateRefreshToken(refreshToken) {
     try {
       const userData = jwt.verify(
@@ -56,6 +58,7 @@ export class TokenService {
       return null;
     }
   }
+
   async validateAccessToken(accessToken: string) {
     try {
       const userData = jwt.verify(

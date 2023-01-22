@@ -2,6 +2,7 @@
   width: 70%;
   margin: 10vh auto;
 }
+
 .adminPannel__content {
   display: flex;
   justify-content: space-between;
@@ -15,12 +16,14 @@
   text-align: center;
   margin-bottom: 30px;
 }
+
 .adminPannel__button {
   width: 100%;
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 10px;
 }
+
 .adminPannel__button_edit {
   width: 100%;
 }

@@ -38,21 +38,21 @@ const Navbar: FC<NavbarProps> = () => {
             Shop
           </span>
         </div>
-        {role === 'ADMIN' ? (
-          <Button
-            variant="danger"
-            className="adminPanel__button"
-            onClick={() => Navigate('/admin-pannel')}
-          >
-            Admin Panel
-          </Button>
-        ) : (
-          ''
-        )}
         {isAuth ? (
           <div className="profile__container">
             <div className="profile">
               <span className="profile__text">{email}</span>
+              {role === 'ADMIN' ? (
+              <Button
+                variant="danger"
+                className="adminPannel__button_entry"
+                onClick={() => Navigate('/admin-pannel')}
+              >
+                Admin Panel
+              </Button>
+            ) : (
+              <></>
+            )}
             </div>
             <button
               className="Navbar__button Navbar__button_signup"

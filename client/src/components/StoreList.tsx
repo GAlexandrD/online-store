@@ -24,7 +24,7 @@ const StoreList: FC = () => {
     const items = [];
     for (let i = 1; i <= pagesCount; i++) {
       items.push(
-        <Pagination.Item active={page === i} onClick={() => setPage(i)}>
+        <Pagination.Item key={i} active={page === i} onClick={() => setPage(i)}>
           {i}
         </Pagination.Item>
       );

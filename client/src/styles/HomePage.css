@@ -19,3 +19,14 @@
 .basket__button:hover{
   opacity: 1;
 }
+
+.basket_title{
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
