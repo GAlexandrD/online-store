@@ -8,9 +8,9 @@ async function bootstrap() {
   app.use(cookieParser());
   app.enableCors({ credentials: true, origin: 'http://localhost:3000' });
   const config = new DocumentBuilder()
-    .setTitle('Median')
-    .setDescription('The Median API description')
-    .setVersion('0.1')
+    .setTitle('STORE')
+    .setDescription('Store API description ')
+    .setVersion('1')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
