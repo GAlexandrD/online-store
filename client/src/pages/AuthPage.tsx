@@ -2,7 +2,7 @@ import '../styles/AuthPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useTypedSelector } from '../hooks/redux';
-import { login, authorisation } from '../store/reducers/AuthActionCreator';
+import { login, authorisation } from '../store/reducers/user/AuthActionCreator';
 
 function AuthPage() {
   const { error, isAuth } = useTypedSelector((state) => state.userReducer);

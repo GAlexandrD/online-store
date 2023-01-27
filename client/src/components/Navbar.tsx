@@ -3,7 +3,7 @@ import { FC } from 'react';
 import '../styles/Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useTypedSelector } from '../hooks/redux';
-import { logout } from '../store/reducers/AuthActionCreator';
+import { logout } from '../store/reducers/user/AuthActionCreator';
 import { Button } from 'react-bootstrap';
 
 interface NavbarProps {}

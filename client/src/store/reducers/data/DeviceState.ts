@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { DeviceModel } from '../../types/types';
+import { DeviceModel } from '../../../types/types';
 
 interface DeviceState {
   devices: {

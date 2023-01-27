@@ -1,6 +1,6 @@
-import AuthService from '../../services/AuthService';
+import AuthService from '../../../services/AuthService';
 import { AxiosError } from 'axios';
-import { AppDispatch } from '..';
+import { AppDispatch } from '../..';
 import { authTry, authSuccess, authError, logoutAction } from './UserState';
 
 export const login =

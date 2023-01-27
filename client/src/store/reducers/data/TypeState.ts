@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TypeModel } from '../../types/types';
+import { TypeModel } from '../../../types/types';
 
 interface typeState {
   types: TypeModel[];

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import BasketList from '../components/BasketList';
 import { useAppDispatch } from '../hooks/redux';
-import { authorisation } from '../store/reducers/AuthActionCreator';
+import { authorisation } from '../store/reducers/user/AuthActionCreator';
 import '../styles/HomePage.css';
 
 function BasketPage() {

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { BrandModel } from '../../types/types';
+import { BrandModel } from '../../../types/types';
 
 interface brandState {
   brands: BrandModel[];

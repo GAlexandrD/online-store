@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import StoreFilter from '../components/StoreFilter';
 import StoreList from '../components/StoreList';
 import { useAppDispatch } from '../hooks/redux';
-import { authorisation } from '../store/reducers/AuthActionCreator';
+import { authorisation } from '../store/reducers/user/AuthActionCreator';
 import '../styles/HomePage.css';
 import { useNavigate } from 'react-router-dom';
 import { useTypedSelector } from '../hooks/redux';

@@ -2,7 +2,7 @@ import React, { FC, useEffect } from 'react';
 import { useTypedSelector } from '../hooks/redux';
 import { useAppDispatch } from '../hooks/redux';
 import DeviceList from './DeviceList';
-import { fetchBasket } from '../store/reducers/BasketActions';
+import { fetchBasket } from '../store/reducers/user/BasketActions';
 import { Link } from 'react-router-dom';
 import '../styles/list.css';
 

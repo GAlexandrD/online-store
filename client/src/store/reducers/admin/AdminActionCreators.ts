@@ -1,8 +1,8 @@
 import axios, { AxiosError } from 'axios';
-import api from '../../http';
-import { AppDispatch } from '..';
+import api from '../../../http';
+import { AppDispatch } from '../..';
 import { pending, success, reject } from './AdminState';
-import { DeviceRequest } from '../../types/httpTypes';
+import { DeviceRequest } from '../../../types/httpTypes';
 
 export const addDevice =
   (device: DeviceRequest) => async (dispatch: AppDispatch) => {

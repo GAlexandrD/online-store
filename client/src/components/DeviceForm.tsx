@@ -3,8 +3,8 @@ import { useAppDispatch, useTypedSelector } from '../hooks/redux';
 import MyModal from './UI/MyModal/MyModal';
 import { Button, Form, InputGroup, ListGroup } from 'react-bootstrap';
 import '../styles/deviceForm.css';
-import { addDevice } from '../store/reducers/AdminActionCreators';
-import { reject } from '../store/reducers/AdminState';
+import { addDevice } from '../store/reducers/admin/AdminActionCreators';
+import { reject } from '../store/reducers/admin/AdminState';
 
 interface DeviceProps {
   close: Function;

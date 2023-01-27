@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useMemo, useState } from 'react';
-import { fetchDevices } from '../store/reducers/FetchActionCreators';
+import { fetchDevices } from '../store/reducers/data/FetchActionCreators';
 import { useTypedSelector } from '../hooks/redux';
 import { useAppDispatch } from '../hooks/redux';
 import DeviceList from './DeviceList';

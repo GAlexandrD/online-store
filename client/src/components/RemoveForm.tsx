@@ -7,8 +7,8 @@ import {
   removeBrand,
   removeDevice,
   removeType,
-} from '../store/reducers/AdminActionCreators';
-import { reject } from '../store/reducers/AdminState';
+} from '../store/reducers/admin/AdminActionCreators';
+import { reject } from '../store/reducers/admin/AdminState';
 
 type typeRemove = 'device' | 'brand' | 'type';
 

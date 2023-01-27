@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { DeviceModel } from '../types/types';
 import '../styles/device.css';
 import { useAppDispatch } from '../hooks/redux';
-import { chooseDevice } from '../store/reducers/DeviceState';
+import { chooseDevice } from '../store/reducers/data/DeviceState';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface DeviceProps {

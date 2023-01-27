@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
-import api from '../../http';
-import { AppDispatch } from '..';
-import { DeviceModel } from '../../types/types';
+import api from '../../../http';
+import { AppDispatch } from '../..';
+import { DeviceModel } from '../../../types/types';
 import {
   basketFetching,
   basketFetchingSuccess,

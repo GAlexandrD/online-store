@@ -3,8 +3,8 @@ import { useAppDispatch } from '../hooks/redux';
 import MyModal from './UI/MyModal/MyModal';
 import { Button, InputGroup, Form } from 'react-bootstrap';
 import '../styles/deviceForm.css';
-import { addBrand } from '../store/reducers/AdminActionCreators';
-import { reject } from '../store/reducers/AdminState';
+import { addBrand } from '../store/reducers/admin/AdminActionCreators';
+import { reject } from '../store/reducers/admin/AdminState';
 
 interface BrandProps {
   close: Function;

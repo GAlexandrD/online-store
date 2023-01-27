@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
-import api from '../../http';
-import { AppDispatch } from '..';
-import { BrandModel, DeviceModel, TypeModel } from '../../types/types';
+import api from '../../../http';
+import { AppDispatch } from '../..';
+import { BrandModel, DeviceModel, TypeModel } from '../../../types/types';
 import {
   devicesFetching,
   devicesFetchingSuccess,

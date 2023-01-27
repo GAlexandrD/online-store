@@ -4,8 +4,8 @@ import { useAppDispatch, useTypedSelector } from '../hooks/redux';
 import '../styles/DevicePage.css';
 import { Button } from 'react-bootstrap';
 import { useEffect } from 'react';
-import { chooseDevice } from '../store/reducers/DeviceState';
-import { deleteFromBasket, fetchBasket } from '../store/reducers/BasketActions';
+import { chooseDevice } from '../store/reducers/data/DeviceState';
+import { deleteFromBasket, fetchBasket } from '../store/reducers/user/BasketActions';
 
 function BasketDevicePage() {
   const { chosenDevice } = useTypedSelector((state) => state.deviceReducer);

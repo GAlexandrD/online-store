@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAppDispatch, useTypedSelector } from '../hooks/redux';
 import { useNavigate } from 'react-router-dom';
-import { registration } from '../store/reducers/AuthActionCreator';
+import { registration } from '../store/reducers/user/AuthActionCreator';
 
 function RegistrationPage() {
   const { error, isAuth, isPanding } = useTypedSelector(

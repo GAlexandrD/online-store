@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { FC } from 'react';
 import { useAppDispatch, useTypedSelector } from '../hooks/redux';
-import { fetchBrands, fetchTypes } from '../store/reducers/FetchActionCreators';
+import { fetchBrands, fetchTypes } from '../store/reducers/data/FetchActionCreators';
 import '../styles/filters.css';
 import Form from 'react-bootstrap/Form';
-import { chooseBrand } from '../store/reducers/BrandState';
-import { chooseType } from '../store/reducers/TypeState';
-import { setSearch } from '../store/reducers/DeviceState';
+import { chooseBrand } from '../store/reducers/data/BrandState';
+import { chooseType } from '../store/reducers/data/TypeState';
+import { setSearch } from '../store/reducers/data/DeviceState';
 
 const StoreFilter: FC = () => {
   const { brands, types, chosenBrand, chosenType, search } = useTypedSelector(
