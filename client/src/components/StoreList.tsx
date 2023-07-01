@@ -15,7 +15,7 @@ const StoreList: FC = () => {
     })
   );
   const [page, setPage] = useState(1);
-  const [limit] = useState(10);
+  const [limit] = useState(30);
   const pagesCount = useMemo(() => {
     return Math.ceil(devices.count / limit);
   }, [devices.count, limit]);
@@ -36,10 +36,16 @@ const StoreList: FC = () => {
   }, [chosenType, chosenBrand, page, search, dispatch, limit]);
   return (
     <div className="list__container">
-      <DeviceList devices={devices.rows} />
-      <div className="pagination">
-        <Pagination>{items}</Pagination>
-      </div>
+      {devices.rows.length ? (
+        <>
+          <DeviceList devices={devices.rows} />{' '}
+          <div className="pagination">
+            <Pagination>{items}</Pagination>
+          </div>
+        </>
+      ) : (
+        <div className="notfound">no results found</div>
+      )}
     </div>
   );
 };

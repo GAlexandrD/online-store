@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
+  margin-bottom: 5px;
 }
 
 .filters__select{
@@ -11,11 +12,9 @@
 }
 
 .filterItem{
-  margin-top: 5px;
   margin-left: 15px;
   display: flex;
   width: 100%;
-  margin-bottom: 10px;
 }
 
 .search{
