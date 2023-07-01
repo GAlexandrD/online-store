@@ -1,6 +1,17 @@
 import { PrismaClient } from '@prisma/client';
+import * as bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
+
+const root = async () => {
+  const hashPassword = await bcrypt.hash('root', 3);
+  const newUser = await prisma.users.upsert({
+    where: { email: 'root' },
+    update: {},
+    create: { email: 'root', password: hashPassword, role: 'ADMIN' },
+  });
+  await prisma.baskets.create({ data: { userId: newUser.id } });
+};
 
 const brands = async () => {
   await prisma.brands.upsert({
@@ -60,9 +71,21 @@ const types = async () => {
   });
 };
 
+const mock = async () => {
+  for (let i = 0; i < 100; i++) {
+    await prisma.devices.upsert({
+      where: { name: 'mock' + i },
+      update: {},
+      create: { name: 'mock' + i, typeId: 1, brandId: 1, price: 1 },
+    });
+  }
+};
+
 const seed = async () => {
+  root();
   brands();
   types();
+  mock();
 };
 
 seed()
