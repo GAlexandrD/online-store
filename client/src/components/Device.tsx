@@ -22,7 +22,7 @@ const Device: FC<DeviceProps> = ({ device }) => {
     <div className="device" onClick={showInfo}>
       <div className="img__container"><img
         className="device__picture"
-        src={`http://localhost:5000/${device.img}`}
+        src={device.img ? `http://localhost:5000/${device.img}`: './img/noimage.jpg'}
         alt="*"
         onMouseDown={(e) => e.preventDefault()}
       /></div>
