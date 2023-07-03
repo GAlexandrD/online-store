@@ -25,7 +25,6 @@ function BasketDevicePage() {
   const deleteDevice = () => {
     if (userId && chosenDevice) {
       dispatch(deleteFromBasket(userId, chosenDevice.id));
-      dispatch(fetchBasket(userId));
       navigate('/basket');
     }
   };

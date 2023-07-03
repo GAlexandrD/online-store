@@ -14,7 +14,7 @@ const BasketList: FC = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     if (id) dispatch(fetchBasket(id));
-  }, [id, dispatch]);
+  });
   return (
     <>
       {!isAuth ? (
